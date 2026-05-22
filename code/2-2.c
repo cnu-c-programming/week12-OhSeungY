@@ -25,7 +25,7 @@ int main(int argc, const char* argv[]) {
         }
         avg += students[i].score;
     }
-    avg /= count + 1;
+    avg /= count;
         
     printf("max: %d\n", max);
     printf("avg: %.2f\n", avg);
