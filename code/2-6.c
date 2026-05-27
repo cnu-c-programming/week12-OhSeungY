@@ -11,7 +11,7 @@ int main(int argc, const char* argv[]) {
 
     while(feof(fp) == 0){
         fgets(buffer, sizeof(buffer), fp);
-        if(strchr(buffer, *target_str) == 0){
+        if((strstr(buffer, target_str))){
             printf("%s", buffer);
         }
     }
