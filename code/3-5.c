@@ -10,6 +10,15 @@ int main(int argc, const char* argv[]) {
 
 
     int sum = 0;
+    char buffer[32];
+    while(feof(fp) == 0){
+        fgets(buffer, sizeof(buffer), fp);
+        if(isdigit(*buffer)){
+            sum += atoi(buffer);
+        }else{
+            printf("invalid input %s", buffer);
+        }
+    }
 
 
     printf("sum: %d\n", sum);
