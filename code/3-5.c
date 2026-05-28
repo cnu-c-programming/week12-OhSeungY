@@ -17,7 +17,6 @@ int main(int argc, const char* argv[]) {
     while(feof(fp) == 0){
         fgets(buffer, sizeof(buffer), fp);
         int isDigit = 1;
-        int str_length = strlen(buffer);
         int i = 0;
         while(*(buffer + i) != '\0' && *(buffer + i) != '\n'){
             if(isdigit(*(buffer + i)) == 0){
@@ -28,7 +27,11 @@ int main(int argc, const char* argv[]) {
         if(isDigit == 1){
             sum += atoi(buffer);
         }else{
-            fprintf(stderr, "invalid input %s", buffer);
+            if(*(buffer + i) == '\n'){
+                fprintf(stderr, "invalid input %s", buffer);
+            }else{
+                fprintf(stderr, "invalid input %s\n", buffer);
+            }
         }
     }
     printf("sum: %d\n", sum);
