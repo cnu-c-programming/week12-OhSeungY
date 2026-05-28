@@ -17,11 +17,13 @@ int main(int argc, const char* argv[]) {
     while(feof(fp) == 0){
         fgets(buffer, sizeof(buffer), fp);
         int isDigit = 1;
-        int str_length = strlen(buffer) - 1;
-        for(int i=0; i<str_length; i++){
+        int str_length = strlen(buffer);
+        int i = 0;
+        while(*(buffer + i) != '\0' && *(buffer + i) != '\n'){
             if(isdigit(*(buffer + i)) == 0){
                 isDigit = 0;
             }
+            i++;
         }
         if(isDigit == 1){
             sum += atoi(buffer);
