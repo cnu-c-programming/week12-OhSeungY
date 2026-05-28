@@ -20,7 +20,7 @@ int main(int argc, const char* argv[]) {
             fprintf(stderr, "invalid input %s", buffer);
         }
     }
-    printf("sum: %d", sum);
+    printf("sum: %d\n", sum);
 
     fclose(fp);
 
