@@ -27,7 +27,11 @@ int main(int argc, const char* argv[]) {
         if(isDigit == 1){
             sum += atoi(buffer);
         }else{
-            fprintf(stderr, "invalid input %s", buffer);
+            if(*(buffer + i) == '\n'){
+                fprintf(stderr, "invalid input %s", buffer);
+            }else{
+                fprintf(stderr, "invalid input %s\n", buffer);
+            }
         }
     }
     printf("sum: %d\n", sum);
