@@ -19,13 +19,13 @@ int main(int argc, const char* argv[]) {
     int max = 0;
     float avg = 0;
 
-    for(int i=0; i<count; i++){
+    for(int i=0; i<count-1; i++){
         if(students[i].score > max){
             max = students[i].score;
         }
         avg += students[i].score;
     }
-    avg /= count;
+    avg /= count-1;
         
     printf("max: %d\n", max);
     printf("avg: %.2f\n", avg);
@@ -33,5 +33,4 @@ int main(int argc, const char* argv[]) {
     fclose(fp);
     return 0;
 }
-
 
